@@ -1,5 +1,3 @@
-Tela de seleção de personagens imersiva para RPG de mesa inspirada em universos de terror/investigação urbana, desenvolvida com HTML5, CSS3 e Vanilla JavaScript, com sistema de senhas, inventário de itens, player customizado do Spotify e download de fichas.
-
 # 🌑 Character Selection - RPG Menu
 
 Uma tela de seleção de personagens altamente imersiva e com temática sombreada/gótica, desenvolvida para projetos de RPG de mesa e investigações urbanas (estilo *Ordem Paranormal* / *Call of Cthulhu*). O sistema conta com carrossel dinâmico, efeitos sonoros, player do Spotify integrado e um sistema de segurança com senhas e inventário.
