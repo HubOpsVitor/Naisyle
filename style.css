@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body, html {
     width: 100%;
     height: 100%;
@@ -10,6 +11,7 @@ body, html {
     font-family: 'Roboto', sans-serif;
     background-color: #0b0b0b;
 }
+
 .selection-screen {
     position: relative;
     width: 100vw;
@@ -19,17 +21,20 @@ body, html {
     background-position: center;
     overflow: hidden;
 }
+
 .logo-container {
     position: absolute;
     top: -83px;
     left: 45px;
     z-index: 10;
 }
+
 .logo-container img {
     width: 290px;
     height: auto;
     max-width: none;
 }
+
 .nav-arrow {
     position: absolute;
     top: 50%;
@@ -48,13 +53,16 @@ body, html {
     transition: all 0.2s;
     z-index: 20;
 }
+
 .nav-arrow:hover {
     background: #ff5c5c;
     border-color: #ff5c5c;
     transform: translateY(-50%) scale(1.1);
 }
+
 .arrow-left { left: 20px; }
 .arrow-right { right: 20px; }
+
 .character-name {
     position: absolute;
     top: 15%;
@@ -69,6 +77,7 @@ body, html {
     line-height: 1;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .attributes-grid {
     position: absolute;
     top: 28%;
@@ -78,6 +87,7 @@ body, html {
     z-index: 10;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .hex-attribute {
     position: absolute;
     width: 110px;  
@@ -94,25 +104,30 @@ body, html {
     transition: transform 0.3s, background-color 0.3s;
     z-index: 4;
 }
+
 .hex-attribute:hover {
     transform: scale(1.12);
     background-color: #221010;
     box-shadow: 0 0 15px rgba(255, 71, 71, 0.8);
 }
+
 .hex-top    { top: 0px; left: 95px; }
 .hex-left   { top: 90px; left: 0px; }
 .hex-right  { top: 90px; left: 190px; }
 .hex-bottom { top: 180px; left: 95px; }
+
 .hex-label {
     font-size: 0.95rem;
     font-weight: 700;
     color: #ff5c5c;
     text-transform: uppercase;
 }
+
 .hex-value {
     font-size: 1.35rem;
     font-weight: bold;
 }
+
 .center-panel {
     position: absolute;
     top: 41%;
@@ -123,12 +138,14 @@ body, html {
     z-index: 10;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .story-text {
     color: #e6e6e6;
     font-size: 1.05rem;
     line-height: 1.7;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.95);
 }
+
 .right-panel {
     position: absolute;
     right: 0;
@@ -139,6 +156,7 @@ body, html {
     z-index: 5;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .bg-ghost-character {
     position: absolute;
     right: 12%;
@@ -149,6 +167,7 @@ body, html {
     z-index: 1;
     transition: all 0.4s ease-in-out;
 }
+
 .main-character-img {
     position: absolute;
     right: 2%;
@@ -159,24 +178,29 @@ body, html {
     filter: drop-shadow(-15px 0px 25px rgba(0,0,0,0.85));
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
+
 .slide-out-left {
     opacity: 0;
     transform: translateX(-60px);
 }
+
 .slide-out-right {
     opacity: 0;
     transform: translateX(60px);
 }
+
 .prepare-from-right {
     opacity: 0;
     transform: translateX(60px);
     transition: none !important;
 }
+
 .prepare-from-left {
     opacity: 0;
     transform: translateX(-60px);
     transition: none !important;
 }
+
 @keyframes screenShake {
     0% { transform: translate(0, 0); }
     20% { transform: translate(-6px, 4px); }
@@ -185,9 +209,11 @@ body, html {
     80% { transform: translate(4px, 2px); }
     100% { transform: translate(0, 0); }
 }
+
 .shake-screen {
     animation: screenShake 0.3s ease-in-out;
 }
+
 .select-btn {
     position: absolute;
     bottom: 45px;
@@ -206,15 +232,18 @@ body, html {
     z-index: 20;
     transition: all 0.25s ease;
 }
+
 .select-btn:hover {
     background: #ff4747;
     color: #0b0b0b;
     box-shadow: 0 0 25px rgba(255, 71, 71, 0.85);
     transform: translateX(-50%) scale(1.06);
 }
+
 .select-btn:active {
     transform: translateX(-50%) scale(0.98);
 }
+
 .spotify-box {
     position: absolute;
     bottom: 35px;
@@ -223,6 +252,7 @@ body, html {
     z-index: 20;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .spotify-label {
     font-family: 'Cinzel', serif;
     font-size: 0.85rem;
@@ -233,6 +263,7 @@ body, html {
     text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
     text-transform: uppercase;
 }
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -248,10 +279,12 @@ body, html {
     pointer-events: none;
     transition: opacity 0.3s ease;
 }
+
 .modal-overlay.active {
     opacity: 1;
     pointer-events: auto;
 }
+
 .modal-content {
     background: #141414;
     border: 2px solid #ff4747;
@@ -266,9 +299,11 @@ body, html {
     transform: translateY(-20px);
     transition: transform 0.3s ease;
 }
+
 .modal-overlay.active .modal-content {
     transform: translateY(0);
 }
+
 .modal-content h2 {
     font-family: 'Cinzel', serif;
     font-size: 1.3rem;
@@ -276,6 +311,7 @@ body, html {
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
+
 #password-input {
     width: 160px;
     padding: 12px;
@@ -289,15 +325,18 @@ body, html {
     outline: none;
     margin-bottom: 20px;
 }
+
 #password-input:focus {
     border-color: #ff4747;
     box-shadow: 0 0 10px rgba(255, 71, 71, 0.4);
 }
+
 .modal-buttons {
     display: flex;
     gap: 15px;
     justify-content: center;
 }
+
 .modal-btn-confirm, .modal-btn-cancel {
     padding: 10px 24px;
     font-family: 'Cinzel', serif;
@@ -307,34 +346,41 @@ body, html {
     border-radius: 4px;
     transition: all 0.2s;
 }
+
 .modal-btn-confirm {
     background: #ff4747;
     color: #0b0b0b;
     border: 2px solid #ff4747;
 }
+
 .modal-btn-confirm:hover {
     background: #ff2121;
     box-shadow: 0 0 12px rgba(255, 71, 71, 0.8);
 }
+
 .modal-btn-cancel {
     background: transparent;
     color: #aaa;
     border: 2px solid #555;
 }
+
 .modal-btn-cancel:hover {
     background: #222;
     color: #fff;
     border-color: #888;
 }
+
 .error-msg {
     color: #ff4747;
     margin-top: 15px;
     font-size: 0.9rem;
     height: 20px;
 }
+
 .hidden {
     display: none !important;
 }
+
 .success-msg {
     font-family: 'Cinzel', serif;
     color: #4cd137;
@@ -342,11 +388,13 @@ body, html {
     margin-bottom: 10px;
     text-shadow: 0 0 10px rgba(76, 209, 55, 0.4);
 }
+
 .inventory-subtitle {
     color: #ccc;
     margin-bottom: 20px;
     font-size: 1rem;
 }
+
 .items-container {
     text-align: left;
     max-height: 280px;
@@ -354,6 +402,7 @@ body, html {
     margin-bottom: 20px;
     padding-right: 5px;
 }
+
 .item-card {
     background: #1c1c1c;
     border-left: 4px solid #ff4747;
@@ -361,24 +410,29 @@ body, html {
     margin-bottom: 12px;
     border-radius: 0 4px 4px 0;
 }
+
 .item-name {
     font-weight: 700;
     color: #ff5c5c;
     font-size: 1.05rem;
     margin-bottom: 4px;
 }
+
 .item-desc {
     font-size: 0.9rem;
     color: #bbb;
     line-height: 1.4;
 }
+
 .rotate-warning {
     display: none;
 }
+
 @media screen and (max-width: 950px) and (orientation: portrait) {
     .selection-screen {
         display: none !important;
     }
+
     .rotate-warning {
         display: flex;
         flex-direction: column;
@@ -393,63 +447,73 @@ body, html {
         padding: 20px;
         gap: 15px;
     }
+
     .rotate-icon {
         font-size: 3.5rem;
         animation: spinPhone 2s infinite ease-in-out;
     }
+
     .rotate-warning p {
         font-size: 1.1rem;
         letter-spacing: 2px;
         color: #ffffff;
     }
+
     @keyframes spinPhone {
         0% { transform: rotate(0deg); }
         50% { transform: rotate(-90deg); }
         100% { transform: rotate(0deg); }
     }
 }
+
 @media screen and (max-width: 950px) and (orientation: landscape) {
     .logo-container {
-        top: -28px;
-        left: 15px;
+        top: -35px;
+        left: 10px;
     }
     .logo-container img {
-        width: 115px;
+        width: 90px;
     }
+
     .nav-arrow {
-        width: 36px;
-        height: 36px;
-        font-size: 1.2rem;
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
     }
-    .arrow-left { left: 8px; }
-    .arrow-right { right: 8px; }
+    .arrow-left { left: 5px; }
+    .arrow-right { right: 5px; }
+
     .character-name {
-        top: 13%;
-        left: 8%;
-        font-size: 2.3rem;
-        letter-spacing: 1.5px;
+        top: 8%;
+        left: 6%;
+        font-size: 2rem;
+        letter-spacing: 1px;
     }
+
     .attributes-grid {
-        top: 26%;
-        left: 7%;
-        width: 180px;
-        height: 180px;
-        transform: scale(0.58);
+        top: 28%;
+        left: 5%;
+        width: 150px;
+        height: 150px;
+        transform: scale(0.6);
         transform-origin: top left;
     }
+
     .center-panel {
-        top: 31%;
-        left: 28%;
-        width: 40%;
+        top: 26%;
+        left: 24%;
+        width: 42%;
         max-width: none;
-        max-height: 44vh;
+        max-height: 48vh;
         overflow-y: auto;
-        padding-right: 6px;
+        padding-right: 4px;
     }
+
     .story-text {
-        font-size: 0.72rem;
-        line-height: 1.4;
+        font-size: 0.7rem;
+        line-height: 1.35;
     }
+
     .center-panel::-webkit-scrollbar {
         width: 3px;
     }
@@ -457,76 +521,92 @@ body, html {
         background: #ff4747;
         border-radius: 3px;
     }
+
     .bg-ghost-character {
-        right: 4%;
-        height: 96vh;
+        right: 2%;
+        height: 98vh;
     }
     .main-character-img {
-        right: -2%;
+        right: -4%;
         height: 92vh;
     }
+
     .spotify-box {
-        bottom: 10px;
-        left: 15px;
-        transform: scale(0.68);
+        bottom: 8px;
+        left: 10px;
+        transform: scale(0.55);
         transform-origin: bottom left;
     }
+
     .spotify-label {
-        font-size: 0.75rem;
-        margin-bottom: 3px;
+        font-size: 0.7rem;
+        margin-bottom: 2px;
     }
+
     .select-btn {
-        bottom: 12px;
-        left: 52%;
-        padding: 7px 20px;
-        font-size: 0.85rem;
-        letter-spacing: 2px;
+        bottom: 8px;
+        left: 50%;
+        padding: 6px 18px;
+        font-size: 0.8rem;
+        letter-spacing: 1.5px;
     }
+
     .modal-content {
-        width: 420px;
-        padding: 16px 20px;
-        max-height: 90vh;
+        width: 380px;
+        padding: 14px 16px;
+        max-height: 92vh;
         overflow-y: auto;
     }
+
     .modal-content h2 {
-        font-size: 1rem;
-        margin-bottom: 12px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
     }
+
     #password-input {
-        width: 130px;
-        padding: 6px;
-        font-size: 1.4rem;
-        margin-bottom: 12px;
+        width: 110px;
+        padding: 4px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        letter-spacing: 6px;
     }
+
     .modal-btn-confirm, .modal-btn-cancel {
-        padding: 7px 16px;
-        font-size: 0.85rem;
+        padding: 6px 14px;
+        font-size: 0.8rem;
     }
+
     .error-msg {
         margin-top: 8px;
         font-size: 0.8rem;
         height: 16px;
     }
+
     .success-msg {
-        font-size: 1.15rem;
-        margin-bottom: 4px;
+        font-size: 1rem;
+        margin-bottom: 3px;
     }
+
     .inventory-subtitle {
-        font-size: 0.85rem;
-        margin-bottom: 10px;
-    }
-    .items-container {
-        max-height: 36vh;
-        margin-bottom: 12px;
-    }
-    .item-card {
-        padding: 8px 10px;
+        font-size: 0.8rem;
         margin-bottom: 8px;
     }
-    .item-name {
-        font-size: 0.88rem;
+
+    .items-container {
+        max-height: 32vh;
+        margin-bottom: 10px;
     }
+
+    .item-card {
+        padding: 6px 8px;
+        margin-bottom: 6px;
+    }
+
+    .item-name {
+        font-size: 0.82rem;
+    }
+
     .item-desc {
-        font-size: 0.78rem;
+        font-size: 0.72rem;
     }
 }
