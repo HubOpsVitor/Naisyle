@@ -111,6 +111,13 @@ const itemsList = document.getElementById('items-list');
 
 const animatedBlocks = [nameElement, attributesContainer, centerPanel, rightPanel, spotifyContainer];
 
+function hideLogo() {
+    const logoContainer = document.querySelector('.logo-container');
+    if (logoContainer) {
+        logoContainer.style.display = 'none';
+    }
+}
+
 function renderCharacterData(index) {
     const char = characters[index];
     nameElement.textContent = char.name;
@@ -134,6 +141,8 @@ function renderCharacterData(index) {
         `;
         attributesContainer.appendChild(hexDiv);
     });
+
+    hideLogo();
 }
 
 function updateCharacter(index, direction) {
@@ -243,4 +252,5 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+hideLogo();
 renderCharacterData(currentIndex);
