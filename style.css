@@ -28,7 +28,6 @@ body, html {
     top: -83px;
     left: 45px;
     z-index: 10;
-    display: none;
 }
 
 .logo-container img {
@@ -373,7 +372,6 @@ body, html {
     .logo-container {
         top: -14px;
         left: 12px;
-        display: none;
     }
     .logo-container img {
         width: 72px;
