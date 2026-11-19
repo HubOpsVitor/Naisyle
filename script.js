@@ -1,4 +1,3 @@
-
 const characters = [
     {
         name: "Letycia Dawson",
@@ -73,6 +72,7 @@ const characters = [
         ]
     }
 ];
+
 let currentIndex = 0;
 let isAnimating = false;
 
@@ -81,6 +81,7 @@ const sound2 = new Audio('aud/clicar2.mp3');
 sound1.volume = 0.1;
 sound2.volume = 0.1;
 let useSecondSound = false;
+
 function playClickSound() {
     let currentSound = useSecondSound ? sound2 : sound1;
     currentSound.currentTime = 0;
@@ -107,7 +108,9 @@ const inventorySection = document.getElementById('inventory-section');
 const passwordInput = document.getElementById('password-input');
 const passwordError = document.getElementById('password-error');
 const itemsList = document.getElementById('items-list');
+
 const animatedBlocks = [nameElement, attributesContainer, centerPanel, rightPanel, spotifyContainer];
+
 function renderCharacterData(index) {
     const char = characters[index];
     nameElement.textContent = char.name;
@@ -119,6 +122,7 @@ function renderCharacterData(index) {
         <div class="spotify-label">Música Favorita</div>
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/${char.spotifyTrack}?utm_source=generator&theme=0" width="352" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     `;
+
     attributesContainer.innerHTML = '';
     const positions = ['hex-top', 'hex-left', 'hex-right', 'hex-bottom'];
     char.attributes.forEach((attr, i) => {
@@ -131,17 +135,22 @@ function renderCharacterData(index) {
         attributesContainer.appendChild(hexDiv);
     });
 }
+
 function updateCharacter(index, direction) {
     if (isAnimating) return;
     isAnimating = true;
     playClickSound();
+
     selectionScreen.classList.add('shake-screen');
     setTimeout(() => {
         selectionScreen.classList.remove('shake-screen');
     }, 300);
+
     const outClass = direction === 'right' ? 'slide-out-right' : 'slide-out-left';
     const prepareClass = direction === 'right' ? 'prepare-from-left' : 'prepare-from-right';
+
     animatedBlocks.forEach(el => el.classList.add(outClass));
+
     setTimeout(() => {
         renderCharacterData(index);
         animatedBlocks.forEach(el => {
@@ -155,10 +164,12 @@ function updateCharacter(index, direction) {
         }, 300);
     }, 250);
 }
+
 function nextCharacter() {
     currentIndex = (currentIndex + 1) % characters.length;
     updateCharacter(currentIndex, 'right');
 }
+
 function prevCharacter() {
     currentIndex = (currentIndex - 1 + characters.length) % characters.length;
     updateCharacter(currentIndex, 'left');
@@ -173,9 +184,11 @@ function openSelectModal() {
     modalOverlay.classList.add('active');
     passwordInput.focus();
 }
+
 function closeSelectModal() {
     modalOverlay.classList.remove('active');
 }
+
 function verifyPassword() {
     const enteredCode = passwordInput.value.trim();
     const currentChar = characters[currentIndex];
@@ -199,6 +212,7 @@ function verifyPassword() {
         passwordInput.focus();
     }
 }
+
 function downloadCharacterSheet() {
     const currentChar = characters[currentIndex];
     const link = document.createElement('a');
@@ -214,6 +228,7 @@ passwordInput.addEventListener('keypress', (event) => {
         verifyPassword();
     }
 });
+
 document.addEventListener('keydown', (event) => {
     if (modalOverlay.classList.contains('active')) {
         if (event.key === 'Escape') {
@@ -227,4 +242,5 @@ document.addEventListener('keydown', (event) => {
         prevCharacter();
     }
 });
+
 renderCharacterData(currentIndex);
